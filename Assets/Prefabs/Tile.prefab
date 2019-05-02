@@ -109,3 +109,5 @@ MonoBehaviour:
   DoorMaterial: {fileID: 2100000, guid: 01e7eb153a2670b49a9437b4d49e64a8, type: 2}
   WallMaterial: {fileID: 2100000, guid: 3c4b1bfc139d3994e9298b6a43dc8f53, type: 2}
   PitMaterial: {fileID: 2100000, guid: 3c8800557815b2649b3bd332979e65a4, type: 2}
+  gridX: 0
+  gridZ: 0

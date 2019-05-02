@@ -17,7 +17,9 @@ public class TileGenerator : MonoBehaviour
             {
                 float newXpos = this.transform.position.x + (tileSize * x) + (tileSize / 2);
                 float newZpos = this.transform.position.z + (tileSize * z) + (tileSize / 2);
-                Instantiate(Tile, new Vector3(newXpos, this.transform.position.y, newZpos), Quaternion.identity, this.transform);
+                GameObject inst = Instantiate(Tile, new Vector3(newXpos, this.transform.position.y, newZpos), Quaternion.identity, this.transform);
+                inst.GetComponent<Tile>().gridX = x;
+                inst.GetComponent<Tile>().gridZ = z;
             }
         }
     }

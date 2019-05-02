@@ -19,6 +19,9 @@ public class Tile : MonoBehaviour
     public Material WallMaterial;
     public Material PitMaterial;
 
+    public int gridX;
+    public int gridZ;
+
     // Start is called before the first frame update
     void Start()
     {
