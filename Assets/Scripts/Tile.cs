@@ -10,6 +10,8 @@ public enum TileType
     DOOR
 }
 
+[System.Serializable]
+[DisallowMultipleComponent]
 public class Tile : MonoBehaviour
 {
     public TileType TerrainType;
@@ -19,7 +21,9 @@ public class Tile : MonoBehaviour
     public Material WallMaterial;
     public Material PitMaterial;
 
+    [SerializeField]
     public int gridX;
+    [SerializeField]
     public int gridZ;
 
     // Start is called before the first frame update
