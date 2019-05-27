@@ -7,7 +7,8 @@ public enum TileType
     OPEN,
     WALL,
     PIT,
-    DOOR
+    DOOR,
+    PATH
 }
 
 [System.Serializable]
@@ -20,6 +21,7 @@ public class Tile : MonoBehaviour
     public Material DoorMaterial;
     public Material WallMaterial;
     public Material PitMaterial;
+    public Material PathMaterial;
 
     [SerializeField]
     public int gridX;
@@ -43,7 +45,7 @@ public class Tile : MonoBehaviour
         
     }
 
-    private void UpdateTileType()
+    public void UpdateTileType()
     {
         MeshRenderer mR = this.GetComponent<MeshRenderer>();
 
@@ -67,6 +69,11 @@ public class Tile : MonoBehaviour
             case TileType.DOOR:
                 {
                     mR.sharedMaterial = DoorMaterial;
+                    break;
+                }
+            case TileType.PATH:
+                {
+                    mR.sharedMaterial = PathMaterial;
                     break;
                 }
             default:

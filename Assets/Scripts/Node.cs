@@ -24,6 +24,21 @@ public class Node
 
     }
 
+    public override bool Equals(object obj)
+    {
+        return this.Equals((Node)(obj));
+    }
+
+    public bool Equals(Node obj)
+    {
+        if(obj.mapTile.gridX == mapTile.gridX && obj.mapTile.gridZ == mapTile.gridZ)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
     // Start is called before the first frame update
     void Start()
     {

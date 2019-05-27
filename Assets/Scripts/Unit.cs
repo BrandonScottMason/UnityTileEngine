@@ -8,6 +8,7 @@ public class Unit : Pathfinder
     public Tile m_targetTile;
     //public List<Node> finalPath;
     private GameObject m_currentTile;
+    private Node m_path;
 
     // Start is called before the first frame update
     protected override void Start()
@@ -24,12 +25,12 @@ public class Unit : Pathfinder
             if(m_targetTile != null)
             {
                 Node playerTile = new Node(m_currentTile.GetComponent<Tile>());
-                Node path = FinalPath(playerTile, new Node(m_targetTile));
-                float wireSize = path.mapTile.GetComponent<BoxCollider>().size.x;
-                while (path != playerTile)
+                m_path = FinalPath(playerTile, new Node(m_targetTile));
+                while(m_path != playerTile)
                 {
-                    Gizmos.DrawWireCube(path.mapTile.gameObject.transform.position, new Vector3(wireSize, 2, wireSize));
-                    path = path.Parent;
+                    m_path.mapTile.gameObject.GetComponent<Tile>().TerrainType = TileType.PATH;
+                    m_path.mapTile.gameObject.GetComponent<Tile>().UpdateTileType();
+                    m_path = m_path.Parent;
                 }
             }
         }

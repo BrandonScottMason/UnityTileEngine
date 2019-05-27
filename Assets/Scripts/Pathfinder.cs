@@ -15,10 +15,16 @@ public class Pathfinder : MonoBehaviour
         AddValidAdjacentTiles(aStart, aEnd);
         Node currentNode = GetTileWithLowestScore();
 
-        while(currentNode != aEnd)
+        while(currentNode != null && currentNode != aEnd)
         {
             AddValidAdjacentTiles(currentNode, aEnd);
             currentNode = GetTileWithLowestScore();
+
+            if(currentNode.Equals(aEnd))
+            {
+                return currentNode;
+            }
+
             m_openList.Remove(currentNode);
             m_closedList.Add(currentNode);
         }
@@ -28,12 +34,15 @@ public class Pathfinder : MonoBehaviour
 
     private Node GetTileWithLowestScore()
     {
-        Node lowestScoreNode = m_openList[0];
-        for(int i = 1; i < m_openList.Count; i++)
+        Node lowestScoreNode = null;
+        if (m_openList.Count > 0)
         {
-            if(m_openList[i].GetFCost() < lowestScoreNode.GetFCost())
+            foreach(Node tile in m_openList)
             {
-                lowestScoreNode = m_openList[i];
+                if(lowestScoreNode == null || tile.GetFCost() < lowestScoreNode.GetFCost())
+                {
+                    lowestScoreNode = tile;
+                }
             }
         }
 
@@ -61,10 +70,10 @@ public class Pathfinder : MonoBehaviour
     private void AddValidAdjacentTiles(Node aNode, Node aTarget)
     {
         int mapLength = m_nodeMap.Length;
-        int index = aNode.mapTile.gridX * TileGeneratorObject.NumberofZTiles + aNode.mapTile.gridZ;
+        int index = aNode.mapTile.gridZ * TileGeneratorObject.NumberOfXTiles + aNode.mapTile.gridX;
         int adjacent = index - 1; // start with the left
 
-        if (adjacent >= 0)
+        if (adjacent >= aNode.mapTile.gridZ * TileGeneratorObject.NumberOfXTiles)
         {
             HandleNode(m_nodeMap[adjacent], aNode, aTarget);
         }
@@ -76,13 +85,13 @@ public class Pathfinder : MonoBehaviour
         }
 
         adjacent = index + 1; // then to the right
-        if (adjacent <= mapLength)
+        if (adjacent < (aNode.mapTile.gridZ * TileGeneratorObject.NumberOfXTiles + TileGeneratorObject.NumberOfXTiles))
         {
             HandleNode(m_nodeMap[adjacent], aNode, aTarget);
         }
 
         adjacent = index + TileGeneratorObject.NumberofZTiles; // finally down
-        if (adjacent <= mapLength)
+        if (adjacent < mapLength)
         {
             HandleNode(m_nodeMap[adjacent], aNode, aTarget);
         }
@@ -93,16 +102,8 @@ public class Pathfinder : MonoBehaviour
         int diffX = aTarget.mapTile.gridX - aOrigin.mapTile.gridX;
         int diffZ = aTarget.mapTile.gridZ - aOrigin.mapTile.gridZ;
 
-        diffZ = diffZ < 0 ? diffX * -1 : diffZ;
-        if(diffX < 0)
-        {
-            diffX *= -1;
-        }
-
-        if(diffZ < 0)
-        {
-            diffZ *= -1;
-        }
+        diffZ = diffZ < 0 ? diffZ * -1 : diffZ;
+        diffX = diffX < 0 ? diffX * -1 : diffX;
 
         return diffX + diffZ;
     }
