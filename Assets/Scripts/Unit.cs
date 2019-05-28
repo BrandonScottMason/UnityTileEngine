@@ -6,15 +6,19 @@ using UnityEngine;
 public class Unit : Pathfinder
 {
     public Tile m_targetTile;
-    //public List<Node> finalPath;
+
+    public Material SelectedMaterial;
+
+    private Material m_defaultMaterial;
     private GameObject m_currentTile;
     private Node m_path;
 
     // Start is called before the first frame update
     protected override void Start()
     {
+        m_defaultMaterial = GetComponent<MeshRenderer>().sharedMaterial;
+
         base.Start();
-        Debug.Log("Unit.Start()");
         if (TileGeneratorObject != null)
         {
             m_currentTile = TileGeneratorObject.GetTileMap()[0];
@@ -39,7 +43,31 @@ public class Unit : Pathfinder
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray toMouse = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit rhInfo;
+            bool didItHit = Physics.Raycast(toMouse, out rhInfo, 500.0f);
+            if(didItHit && rhInfo.transform == this.transform)
+            {
+                OnSelect();
+            }
+            else
+            {
+                OnDeselect();
+            }
+            
+        }
+    }
+
+    private void OnSelect()
+    {
+        this.GetComponent<MeshRenderer>().sharedMaterial = SelectedMaterial;
+    }
+
+    private void OnDeselect()
+    {
+        this.GetComponent<MeshRenderer>().sharedMaterial = m_defaultMaterial;
     }
 
     private void OnValidate()
