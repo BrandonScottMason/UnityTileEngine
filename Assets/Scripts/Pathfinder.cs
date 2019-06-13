@@ -11,6 +11,13 @@ public class Pathfinder : MonoBehaviour
 
     protected Node FinalPath(Node aStart, Node aEnd)
     {
+        if(aEnd.mapTile.TerrainType == TileType.WALL)
+        {
+            // Not pathing to an invalid tile
+            return aStart;
+        }
+
+        ClearLists();
         m_closedList.Add(aStart);
         AddValidAdjacentTiles(aStart, aEnd);
         Node currentNode = GetTileWithLowestScore();
@@ -30,6 +37,28 @@ public class Pathfinder : MonoBehaviour
         }
 
         return currentNode;
+    }
+
+    private void ClearLists()
+    {
+        foreach(Node n in m_openList)
+        {
+            n.mapTile.TerrainType = TileType.OPEN;
+            n.mapTile.UpdateTileType();
+        }
+
+        m_openList.Clear();
+
+        foreach(Node n in m_closedList)
+        {
+            if(n.mapTile.TerrainType == TileType.PATH)
+            {
+                n.mapTile.TerrainType = TileType.OPEN;
+                n.mapTile.UpdateTileType();
+            }
+        }
+
+        m_closedList.Clear();
     }
 
     private Node GetTileWithLowestScore()
