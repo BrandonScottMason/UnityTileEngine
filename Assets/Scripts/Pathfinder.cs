@@ -98,13 +98,31 @@ public class Pathfinder : MonoBehaviour
 
     private void AddValidAdjacentTiles(Node aNode, Node aTarget)
     {
+        //int maxRowIndex = aNode.mapTile.gridZ * TileGeneratorObject.NumberOfXTiles;
         int mapLength = m_nodeMap.Length;
         int index = aNode.mapTile.gridZ * TileGeneratorObject.NumberOfXTiles + aNode.mapTile.gridX;
-        int adjacent = index - 1; // start with the left
+        int adjacent;
 
-        if (adjacent >= aNode.mapTile.gridZ * TileGeneratorObject.NumberOfXTiles)
+        if (aNode.xCoordinate > 0)
         {
-            HandleNode(m_nodeMap[adjacent], aNode, aTarget);
+            adjacent = index - 1; // start with the left
+
+            if (adjacent >= aNode.mapTile.gridZ * TileGeneratorObject.NumberOfXTiles)
+            {
+                HandleNode(m_nodeMap[adjacent], aNode, aTarget);
+            }
+
+            adjacent = (index - TileGeneratorObject.NumberOfZTiles) - 1; // Up-left (diagnal)
+            if (adjacent >= 0)
+            {
+                HandleNode(m_nodeMap[adjacent], aNode, aTarget);
+            }
+
+            adjacent = index + TileGeneratorObject.NumberOfZTiles - 1; // Down-left (diagnal)
+            if (adjacent < mapLength)
+            {
+                HandleNode(m_nodeMap[adjacent], aNode, aTarget);
+            }
         }
 
         adjacent = index - TileGeneratorObject.NumberOfZTiles; // next is the up direction
@@ -113,10 +131,22 @@ public class Pathfinder : MonoBehaviour
             HandleNode(m_nodeMap[adjacent], aNode, aTarget);
         }
 
-        adjacent = index + 1; // then to the right
-        if (adjacent < (aNode.mapTile.gridZ * TileGeneratorObject.NumberOfXTiles + TileGeneratorObject.NumberOfXTiles))
+        if (aNode.xCoordinate < (TileGeneratorObject.NumberOfXTiles - 1))
         {
+            adjacent = (index - TileGeneratorObject.NumberOfZTiles) + 1; // Up-right (diagnal)
+            if (adjacent >= 0)
+            {
+                HandleNode(m_nodeMap[adjacent], aNode, aTarget);
+            }
+
+            adjacent = index + 1; // to the right
             HandleNode(m_nodeMap[adjacent], aNode, aTarget);
+
+            adjacent = index + TileGeneratorObject.NumberOfZTiles + 1; // Down-right (diagnal) 
+            if (adjacent < mapLength)
+            {
+                HandleNode(m_nodeMap[adjacent], aNode, aTarget);
+            }
         }
 
         adjacent = index + TileGeneratorObject.NumberOfZTiles; // finally down
