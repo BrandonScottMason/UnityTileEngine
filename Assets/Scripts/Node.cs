@@ -7,6 +7,9 @@ public class Node
     public Node Parent;
     public Tile mapTile;
 
+    public int xCoordinate;
+    public int zCoordinate;
+
     public int hCost;
     public int gCost;
 
@@ -17,6 +20,8 @@ public class Node
         mapTile = aMapTile;
         gCost = 0;
         hCost = 0;
+        xCoordinate = mapTile.gridX;
+        zCoordinate = mapTile.gridZ;
     }
 
     public void CalculateGCost(Vector3 startingTilePos)
@@ -26,7 +31,7 @@ public class Node
 
     public bool Equals(Node obj)
     {
-        if(obj.mapTile.gridX == mapTile.gridX && obj.mapTile.gridZ == mapTile.gridZ)
+        if(obj.mapTile.gridX == xCoordinate && obj.mapTile.gridZ == zCoordinate)
         {
             return true;
         }

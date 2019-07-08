@@ -11,7 +11,7 @@ public class Pathfinder : MonoBehaviour
 
     protected Node FinalPath(Node aStart, Node aEnd)
     {
-        if(aEnd.mapTile.TerrainType == TileType.WALL)
+        if(aEnd.mapTile.TerrainType == TileType.WALL || aEnd.mapTile.TerrainType == TileType.PIT)
         {
             // Not pathing to an invalid tile
             return aStart;
