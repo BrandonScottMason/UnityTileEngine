@@ -77,6 +77,11 @@ public class Unit : Pathfinder
         }
     }
 
+    public void OnSetPath()
+    {
+        m_bSettingPath = true;
+    }
+
     private void CalculatePath()
     {
         if (m_targetTile != null)
@@ -108,11 +113,6 @@ public class Unit : Pathfinder
         {
             UIButton.SetActive(false);
         }
-    }
-
-    public void OnSetPath()
-    {
-        m_bSettingPath = true;
     }
 
     private void OnValidate()

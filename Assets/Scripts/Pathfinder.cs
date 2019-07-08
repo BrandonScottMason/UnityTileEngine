@@ -107,7 +107,7 @@ public class Pathfinder : MonoBehaviour
             HandleNode(m_nodeMap[adjacent], aNode, aTarget);
         }
 
-        adjacent = index - TileGeneratorObject.NumberofZTiles; // next is the up direction
+        adjacent = index - TileGeneratorObject.NumberOfZTiles; // next is the up direction
         if (adjacent >= 0)
         {
             HandleNode(m_nodeMap[adjacent], aNode, aTarget);
@@ -119,7 +119,7 @@ public class Pathfinder : MonoBehaviour
             HandleNode(m_nodeMap[adjacent], aNode, aTarget);
         }
 
-        adjacent = index + TileGeneratorObject.NumberofZTiles; // finally down
+        adjacent = index + TileGeneratorObject.NumberOfZTiles; // finally down
         if (adjacent < mapLength)
         {
             HandleNode(m_nodeMap[adjacent], aNode, aTarget);

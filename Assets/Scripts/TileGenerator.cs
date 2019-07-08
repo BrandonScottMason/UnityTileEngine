@@ -6,12 +6,12 @@ public class TileGenerator : MonoBehaviour
 {
     public GameObject Tile;
     public int NumberOfXTiles;
-    public int NumberofZTiles;
+    public int NumberOfZTiles;
 
     public void BuildMap()
     {
         float tileSize = Tile.GetComponent<BoxCollider>().size.x; // *Requirement* These tile sizes need to have the same X and Z sizes
-        for (int z = 0; z < NumberofZTiles; z++)
+        for (int z = 0; z < NumberOfZTiles; z++)
         {
             for (int x = 0; x < NumberOfXTiles; x++)
             {
