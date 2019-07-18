@@ -1,0 +1,12 @@
+<Unit>
+	<BaseStats>
+		<Name>TestUnit</Name>
+		<Cost>50</Cost>
+		<Alignment>None</Alignment>
+		<MaxHealth>100</MaxHealth>
+		<Energy>2</Energy>
+		<Defense>10</Defense>
+		<Attack>8</Attack>
+		<Damage>10</Damage>
+	</BaseStats>
+</Unit>

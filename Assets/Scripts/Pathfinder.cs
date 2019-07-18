@@ -170,7 +170,6 @@ public class Pathfinder : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Start()
     {
-        Debug.Log("Pathfinder.Start()");
         TileGeneratorObject = FindObjectOfType<TileGenerator>();
         GameObject[] tileMap = TileGeneratorObject.GetTileMap();
         m_nodeMap = new Node[tileMap.Length];
