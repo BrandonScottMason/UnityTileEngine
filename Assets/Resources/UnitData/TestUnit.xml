@@ -9,4 +9,8 @@
 		<Attack>8</Attack>
 		<Damage>10</Damage>
 	</BaseStats>
+	<SpecialAbilities>
+		<SpecialAbility>Melee</SpecialAbility>
+    <SpecialAbility>Flying</SpecialAbility>
+	</SpecialAbilities>
 </Unit>
