@@ -4,6 +4,7 @@ using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
 using UnityEngine;
+using UnityEngine.UI;
 
 [DisallowMultipleComponent]
 [XmlRoot("TestUnit")]
@@ -68,6 +69,7 @@ public class Unit : Pathfinder
             {
                 UIMoveButton = Instantiate(MoveButtonPrefab, m_canvas.transform, false);
                 UIMoveButton.name = Name + "MoveButton";
+                UIMoveButton.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(OnSetPath);
                 UIMoveButton.SetActive(false);
             }
         }
