@@ -55,6 +55,7 @@ public class MainMenu : Menu
                     }
                 case MainMenuPosition.BrowseCards:
                     {
+                        GameObject.FindObjectOfType<UnitBrowser>().BrowseUnits();
                         break;
                     }
                 case MainMenuPosition.Options:
