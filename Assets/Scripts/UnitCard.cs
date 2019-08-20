@@ -49,19 +49,15 @@ public class UnitCard : MonoBehaviour
                 case "Cost":
                     {
                         int.TryParse(stat.InnerText, out m_cost);
-                        break;
-                    }
-                case "Alignment":
-                    {
-                        m_alignment = stat.InnerText;
-                        transform.Find("Alignment").GetComponent<Text>().text = m_alignment.ToString();
+                        transform.Find("Cost").GetComponent<Text>().text = m_cost.ToString();
                         break;
                     }
                 case "MaxHealth":
                     {
                         int.TryParse(stat.InnerText, out m_maxHealth);
-                        transform.Find("MaxHealth").GetComponent<Text>().text = m_maxHealth.ToString();
-                        transform.Find("CurrentHealth").GetComponent<Text>().text = m_maxHealth.ToString();
+                        m_currentHealth = m_maxHealth;
+                        string health = m_currentHealth.ToString() + '/' + m_maxHealth.ToString();
+                        transform.Find("Health").GetComponent<Text>().text = health;
                         break;
                     }
                 case "Energy":

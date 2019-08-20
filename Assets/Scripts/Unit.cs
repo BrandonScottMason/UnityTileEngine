@@ -56,9 +56,8 @@ public class Unit : Pathfinder
                 UIStatCard.SetActive(false);
 
                 UIStatCard.transform.Find("Name").GetComponent<UnityEngine.UI.Text>().text = Name;
-                UIStatCard.transform.Find("Alignment").GetComponent<UnityEngine.UI.Text>().text = Alignment.ToString();
-                UIStatCard.transform.Find("MaxHealth").GetComponent<UnityEngine.UI.Text>().text = MaxHelath.ToString();
-                UIStatCard.transform.Find("CurrentHealth").GetComponent<UnityEngine.UI.Text>().text = MaxHelath.ToString();
+                string health = MaxHelath.ToString() + '/' + MaxHelath.ToString();
+                UIStatCard.transform.Find("Health").GetComponent<UnityEngine.UI.Text>().text = health;
                 UIStatCard.transform.Find("Energy").GetComponent<UnityEngine.UI.Text>().text = Energy.ToString();
                 UIStatCard.transform.Find("Defense").GetComponent<UnityEngine.UI.Text>().text = Defense.ToString();
                 UIStatCard.transform.Find("Attack").GetComponent<UnityEngine.UI.Text>().text = Attack.ToString();

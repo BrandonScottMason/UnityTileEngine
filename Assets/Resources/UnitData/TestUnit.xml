@@ -2,7 +2,6 @@
 	<BaseStats>
 		<Name>TestUnit</Name>
 		<Cost>50</Cost>
-		<Alignment>None</Alignment>
 		<MaxHealth>100</MaxHealth>
 		<Energy>2</Energy>
 		<Defense>10</Defense>
