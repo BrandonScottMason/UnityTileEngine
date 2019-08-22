@@ -1,0 +1,14 @@
+<Unit>
+	<BaseStats>
+		<Name>Wood Ant Soldier</Name>
+		<Faction>Swarm</Faction>
+		<Cost>15</Cost>
+		<MaxHealth>30</MaxHealth>
+		<Energy>0</Energy>
+		<Defense>13</Defense>
+		<Attack>6</Attack>
+		<Damage>30</Damage>
+	</BaseStats>
+	<SpecialAbilities>
+	</SpecialAbilities>
+</Unit>

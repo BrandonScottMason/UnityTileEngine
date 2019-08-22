@@ -1,0 +1,14 @@
+<Unit>
+	<BaseStats>
+		<Name>Termite Drone</Name>
+		<Faction>Swarm</Faction>
+		<Cost>4</Cost>
+		<MaxHealth>10</MaxHealth>
+		<Energy>0</Energy>
+		<Defense>9</Defense>
+		<Attack>0</Attack>
+		<Damage>10</Damage>
+	</BaseStats>
+	<SpecialAbilities>
+	</SpecialAbilities>
+</Unit>

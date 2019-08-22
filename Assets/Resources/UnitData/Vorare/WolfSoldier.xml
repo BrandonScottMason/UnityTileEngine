@@ -1,0 +1,14 @@
+<Unit>
+	<BaseStats>
+		<Name>WolfSoldier</Name>
+		<Faction>Vorare</Faction>
+		<Cost>11</Cost>
+		<MaxHealth>20</MaxHealth>
+		<Energy>0</Energy>
+		<Defense>14</Defense>
+		<Attack>8</Attack>
+		<Damage>20</Damage>
+	</BaseStats>
+	<SpecialAbilities>
+	</SpecialAbilities>
+</Unit>

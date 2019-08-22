@@ -1,0 +1,14 @@
+<Unit>
+	<BaseStats>
+		<Name>Black Bear Soothsayer</Name>
+		<Faction>Vorare</Faction>
+		<Cost>15</Cost>
+		<MaxHealth>50</MaxHealth>
+		<Energy>2</Energy>
+		<Defense>16</Defense>
+		<Attack>6</Attack>
+		<Damage>20</Damage>
+	</BaseStats>
+	<SpecialAbilities>
+	</SpecialAbilities>
+</Unit>

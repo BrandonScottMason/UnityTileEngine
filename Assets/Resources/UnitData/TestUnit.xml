@@ -1,6 +1,7 @@
 <Unit>
 	<BaseStats>
 		<Name>TestUnit</Name>
+		<Faction>Mercenary</Faction>
 		<Cost>50</Cost>
 		<MaxHealth>100</MaxHealth>
 		<Energy>2</Energy>
@@ -10,6 +11,6 @@
 	</BaseStats>
 	<SpecialAbilities>
 		<SpecialAbility>Melee</SpecialAbility>
-    <SpecialAbility>Flying</SpecialAbility>
+		<SpecialAbility>Flying</SpecialAbility>
 	</SpecialAbilities>
 </Unit>

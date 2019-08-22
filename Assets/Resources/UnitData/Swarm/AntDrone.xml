@@ -1,0 +1,15 @@
+<Unit>
+	<BaseStats>
+		<Name>Ant Drone</Name>
+		<Faction>Swarm</Faction>
+		<Cost>3</Cost>
+		<MaxHealth>10</MaxHealth>
+		<Energy>0</Energy>
+		<Defense>12</Defense>
+		<Attack>1</Attack>
+		<Damage>10</Damage>
+	</BaseStats>
+	<SpecialAbilities>
+		<SpecialAbility>Melee</SpecialAbility>
+	</SpecialAbilities>
+</Unit>

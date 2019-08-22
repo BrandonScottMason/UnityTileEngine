@@ -1,0 +1,14 @@
+<Unit>
+	<BaseStats>
+		<Name>Lone Wolf Archer</Name>
+		<Faction>Mercenary</Faction>
+		<Cost>10</Cost>
+		<MaxHealth>20</MaxHealth>
+		<Energy>0</Energy>
+		<Defense>16</Defense>
+		<Attack>5</Attack>
+		<Damage>20</Damage>
+	</BaseStats>
+	<SpecialAbilities>
+	</SpecialAbilities>
+</Unit>

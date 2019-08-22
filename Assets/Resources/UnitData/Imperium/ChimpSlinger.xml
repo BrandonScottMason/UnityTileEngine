@@ -1,0 +1,14 @@
+<Unit>
+	<BaseStats>
+		<Name>Chimp Slinger</Name>
+		<Faction>Imperium</Faction>
+		<Cost>5</Cost>
+		<MaxHealth>10</MaxHealth>
+		<Energy>0</Energy>
+		<Defense>16</Defense>
+		<Attack>4</Attack>
+		<Damage>10</Damage>
+	</BaseStats>
+	<SpecialAbilities>
+	</SpecialAbilities>
+</Unit>

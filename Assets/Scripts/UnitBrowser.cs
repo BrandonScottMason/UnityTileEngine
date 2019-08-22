@@ -5,41 +5,73 @@ using UnityEngine;
 public class UnitBrowser : MonoBehaviour
 {
     public GameObject StatCardPrefab;
-    private object[] xmlAssets;
-    private List<GameObject> m_unitCards = new List<GameObject>();
-    private GameObject m_contentObj;
+    private List<GameObject> m_factionScrollLists = new List<GameObject>();
+    private GameObject m_activeViewPort;
     //private Canvas m_canvas;
 
     // Start is called before the first frame update
     void Start()
     {
-        m_contentObj = transform.Find("Content").gameObject;
-        if (m_contentObj != null)
+        // Find all faction lists to store for quick reference later
+        string scrollList = "ScrollList";
+        object[] xmlAssets;
+        for (int i = 0; i < transform.childCount; i++)
         {
-            xmlAssets = Resources.LoadAll("UnitData", typeof(TextAsset));
-
-            foreach (object obj in xmlAssets)
+            Transform tempObj = transform.GetChild(i);
+            if (tempObj.name.Contains(scrollList))
             {
-                GameObject tempUnit = Instantiate(StatCardPrefab, m_contentObj.transform);
-                tempUnit.GetComponent<UnitCard>().SetUnitdata(obj as TextAsset);
-                tempUnit.SetActive(false);
-                m_unitCards.Add(tempUnit);
-                //this.GetComponent<UnityEngine.UI.ScrollRect>().content.
+                m_factionScrollLists.Add(tempObj.gameObject);
+                string factionName = tempObj.name;
+                factionName = factionName.Replace(scrollList, "");
+                xmlAssets = Resources.LoadAll("UnitData/" + factionName, typeof(TextAsset));
+                Transform factionViewport = tempObj.transform.Find(factionName + "Viewport");
+                Transform factionListContent = factionViewport.transform.Find(factionName + "ListContent");
+                foreach(object obj in xmlAssets)
+                {
+                    GameObject tempUnitCard = Instantiate(StatCardPrefab, factionListContent);
+                    tempUnitCard.GetComponent<UnitCard>().SetUnitdata(obj as TextAsset);
+                }
+                tempObj.gameObject.SetActive(false);
             }
         }
+
+        m_factionScrollLists[0].SetActive(true);
+        m_activeViewPort = m_factionScrollLists[0];
+
+        this.gameObject.SetActive(false);
     }
 
     public void BrowseUnits()
     {
-        foreach(GameObject obj in m_unitCards)
+    }
+
+    public void OnBackButton()
+    {
+        GameObject.FindObjectOfType<MainMenu>().OnReturnToMainMenu();
+        this.gameObject.SetActive(false);
+    }
+
+    public void OnFactionButtonSelected(string factionName)
+    {
+        if(m_activeViewPort.name.Contains(factionName))
         {
-            obj.SetActive(true);
+            return; // We're already viewing this faction
+        }
+
+        foreach(GameObject viewPort in m_factionScrollLists)
+        {
+            if(viewPort.name.Contains(factionName))
+            {
+                m_activeViewPort.SetActive(false);
+                viewPort.SetActive(true);
+                m_activeViewPort = viewPort;
+                return;
+            }
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 }

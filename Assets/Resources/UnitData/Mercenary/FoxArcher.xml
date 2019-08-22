@@ -1,0 +1,14 @@
+<Unit>
+	<BaseStats>
+		<Name>Fox Archer</Name>
+		<Faction>Mercenary</Faction>
+		<Cost>9</Cost>
+		<MaxHealth>10</MaxHealth>
+		<Energy>0</Energy>
+		<Defense>15</Defense>
+		<Attack>4</Attack>
+		<Damage>20</Damage>
+	</BaseStats>
+	<SpecialAbilities>
+	</SpecialAbilities>
+</Unit>

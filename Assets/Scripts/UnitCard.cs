@@ -44,6 +44,10 @@ public class UnitCard : MonoBehaviour
                         m_name = stat.InnerText;
                         this.name = m_name + "_StatCard";
                         transform.Find("Name").GetComponent<Text>().text = m_name;
+                        if(m_name.Length > 15)
+                        {
+                            transform.Find("Name").GetComponent<Text>().fontSize = 18;
+                        }
                         break;
                     }
                 case "Cost":
@@ -82,6 +86,11 @@ public class UnitCard : MonoBehaviour
                     {
                         int.TryParse(stat.InnerText, out m_damage);
                         transform.Find("Damage").GetComponent<UnityEngine.UI.Text>().text = m_damage.ToString();
+                        break;
+                    }
+                case "Faction":
+                    {
+                        // TODO
                         break;
                     }
                 default: Debug.Log("Unexpected Node: " + stat.Name); break;

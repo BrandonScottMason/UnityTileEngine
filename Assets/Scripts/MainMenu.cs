@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : Menu
 {
+    public GameObject UnitBrowserObject;
 
     private enum MainMenuPosition
     {
@@ -55,7 +56,10 @@ public class MainMenu : Menu
                     }
                 case MainMenuPosition.BrowseCards:
                     {
-                        GameObject.FindObjectOfType<UnitBrowser>().BrowseUnits();
+                        OnMenuSelection();
+                        SelectionArrow.gameObject.SetActive(false);
+                        UnitBrowserObject.SetActive(true);
+                        UnitBrowserObject.GetComponent<UnitBrowser>().BrowseUnits();
                         break;
                     }
                 case MainMenuPosition.Options:
@@ -72,5 +76,23 @@ public class MainMenu : Menu
         }
 
         base.Update();
+    }
+
+    private void OnMenuSelection() // Hide the main menu
+    {
+        for(int i = 0; i < this.transform.childCount; i++)
+        {
+            this.transform.GetChild(i).gameObject.SetActive(false);
+        }
+    }
+
+    public void OnReturnToMainMenu() // Activate the main menu
+    {
+        SelectionArrow.gameObject.SetActive(true);
+
+        for (int i = 0; i < this.transform.childCount; i++)
+        {
+            this.transform.GetChild(i).gameObject.SetActive(true);
+        }
     }
 }

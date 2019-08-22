@@ -1,0 +1,15 @@
+<Unit>
+	<BaseStats>
+		<Name>Termite Scout</Name>
+		<Faction>Swarm</Faction>
+		<Cost>6</Cost>
+		<MaxHealth>10</MaxHealth>
+		<Energy>0</Energy>
+		<Defense>12</Defense>
+		<Attack>2</Attack>
+		<Damage>10</Damage>
+	</BaseStats>
+	<SpecialAbilities>
+		<SpecialAbility>Flight</SpecialAbility>
+	</SpecialAbilities>
+</Unit>

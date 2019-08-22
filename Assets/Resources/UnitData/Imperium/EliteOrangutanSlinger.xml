@@ -1,0 +1,14 @@
+<Unit>
+	<BaseStats>
+		<Name>Elite Orangutan Slinger</Name>
+		<Faction>Imperium</Faction>
+		<Cost>12</Cost>
+		<MaxHealth>30</MaxHealth>
+		<Energy>0</Energy>
+		<Defense>17</Defense>
+		<Attack>6</Attack>
+		<Damage>20</Damage>
+	</BaseStats>
+	<SpecialAbilities>
+	</SpecialAbilities>
+</Unit>

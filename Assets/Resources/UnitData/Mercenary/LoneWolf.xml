@@ -1,0 +1,15 @@
+<Unit>
+	<BaseStats>
+		<Name>Lone Wolf</Name>
+		<Faction>Mercenary</Faction>
+		<Cost>9</Cost>
+		<MaxHealth>20</MaxHealth>
+		<Energy>0</Energy>
+		<Defense>14</Defense>
+		<Attack>2</Attack>
+		<Damage>30</Damage>
+	</BaseStats>
+	<SpecialAbilities>
+		<SpecialAbility>Melee</SpecialAbility>
+	</SpecialAbilities>
+</Unit>

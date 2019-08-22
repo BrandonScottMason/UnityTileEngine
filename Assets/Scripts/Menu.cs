@@ -18,6 +18,9 @@ public class Menu : MonoBehaviour
     // Update is called once per frame
     protected void Update()
     {
-        SelectionArrow.transform.Rotate(Vector3.up * ( 50.0f * Time.deltaTime));
+        if (SelectionArrow.activeInHierarchy)
+        {
+            SelectionArrow.transform.Rotate(Vector3.up * (50.0f * Time.deltaTime));
+        }
     }
 }

@@ -1,0 +1,14 @@
+<Unit>
+	<BaseStats>
+		<Name>Squirrel Slinger</Name>
+		<Faction>Mercenary</Faction>
+		<Cost>9</Cost>
+		<MaxHealth>10</MaxHealth>
+		<Energy>0</Energy>
+		<Defense>14</Defense>
+		<Attack>6</Attack>
+		<Damage>10</Damage>
+	</BaseStats>
+	<SpecialAbilities>
+	</SpecialAbilities>
+</Unit>
