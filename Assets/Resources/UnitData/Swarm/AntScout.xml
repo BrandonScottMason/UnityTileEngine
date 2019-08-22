@@ -1,0 +1,16 @@
+<Unit>
+	<BaseStats>
+		<Name>Ant Scout</Name>
+		<Faction>Swarm</Faction>
+		<Cost>7</Cost>
+		<MaxHealth>20</MaxHealth>
+		<Energy>0</Energy>
+		<Defense>14</Defense>
+		<Attack>4</Attack>
+		<Damage>10</Damage>
+	</BaseStats>
+	<SpecialAbilities>
+		<SpecialAbility>Melee</SpecialAbility>
+		<SpecialAbility>Flight</SpecialAbility>
+	</SpecialAbilities>
+</Unit>

@@ -1,0 +1,16 @@
+<Unit>
+	<BaseStats>
+		<Name>Wasp</Name>
+		<Faction>Swarm</Faction>
+		<Cost>14</Cost>
+		<MaxHealth>40</MaxHealth>
+		<Energy>0</Energy>
+		<Defense>15</Defense>
+		<Attack>6</Attack>
+		<Damage>20</Damage>
+	</BaseStats>
+	<SpecialAbilities>
+		<SpecialAbility>Flight</SpecialAbility>
+		<SpecialAbility>Melee</SpecialAbility>
+	</SpecialAbilities>
+</Unit>

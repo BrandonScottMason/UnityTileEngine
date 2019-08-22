@@ -1,0 +1,16 @@
+<Unit>
+	<BaseStats>
+		<Name>Hornet</Name>
+		<Faction>Swarm</Faction>
+		<Cost>18</Cost>
+		<MaxHealth>50</MaxHealth>
+		<Energy>0</Energy>
+		<Defense>14</Defense>
+		<Attack>8</Attack>
+		<Damage>30</Damage>
+	</BaseStats>
+	<SpecialAbilities>
+		<SpecialAbility>Flight</SpecialAbility>
+		<SpecialAbility>Melee</SpecialAbility>
+	</SpecialAbilities>
+</Unit>

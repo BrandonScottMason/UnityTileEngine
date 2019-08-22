@@ -1,0 +1,15 @@
+<Unit>
+	<BaseStats>
+		<Name>Ant Soldier</Name>
+		<Faction>Swarm</Faction>
+		<Cost>9</Cost>
+		<MaxHealth>20</MaxHealth>
+		<Energy>0</Energy>
+		<Defense>15</Defense>
+		<Attack>5</Attack>
+		<Damage>20</Damage>
+	</BaseStats>
+	<SpecialAbilities>
+		<SpecialAbility>Melee</SpecialAbility>
+	</SpecialAbilities>
+</Unit>

@@ -1,0 +1,15 @@
+<Unit>
+	<BaseStats>
+		<Name>Ear Wig</Name>
+		<Faction>Swarm</Faction>
+		<Cost>11</Cost>
+		<MaxHealth>30</MaxHealth>
+		<Energy>0</Energy>
+		<Defense>15</Defense>
+		<Attack>6</Attack>
+		<Damage>20</Damage>
+	</BaseStats>
+	<SpecialAbilities>
+		<SpecialAbility>Melee</SpecialAbility>
+	</SpecialAbilities>
+</Unit>

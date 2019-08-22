@@ -1,0 +1,15 @@
+<Unit>
+	<BaseStats>
+		<Name>Scorpion</Name>
+		<Faction>Swarm</Faction>
+		<Cost>15</Cost>
+		<MaxHealth>60</MaxHealth>
+		<Energy>0</Energy>
+		<Defense>16</Defense>
+		<Attack>10</Attack>
+		<Damage>40</Damage>
+	</BaseStats>
+	<SpecialAbilities>
+		<SpecialAbility>Melee</SpecialAbility>
+	</SpecialAbilities>
+</Unit>
